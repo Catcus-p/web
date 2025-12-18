@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Delete Box</title>
+
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            background-color: lightcoral;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="addBox()">Add Box</button>
+    <button onclick="deleteBox()">Delete Box</button>
+
+    <div id="area"></div>
+
+    <script>
+        function addBox() {
+            var box = document.createElement("div");
+            box.className = "box";
+            document.getElementById("area").appendChild(box);
+        }
+
+        function deleteBox() {
+            var area = document.getElementById("area");
+            if (area.lastChild) {
+                area.removeChild(area.lastChild);
+            }
+        }
+    </script>
+
+</body>
+</html>

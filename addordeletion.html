@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add & Delete Box</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            min-height: 150px;
+            border: 2px solid black;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .box {
+            width: 80px;
+            height: 80px;
+            background-color: lightblue;
+            display: inline-block;
+            margin: 10px;
+            line-height: 80px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Add and Delete Boxes</h2>
+
+    <button onclick="addBox()">Add Box</button>
+    <button onclick="deleteBox()">Delete Box</button>
+
+    <div class="container" id="container">
+        <!-- Boxes will appear here -->
+    </div>
+
+    <script>
+        function addBox() {
+            var box = document.createElement("div");
+            box.className = "box";
+            box.innerText = "Box";
+            document.getElementById("container").appendChild(box);
+        }
+
+        function deleteBox() {
+            var container = document.getElementById("container");
+            if (container.lastElementChild) {
+                container.removeChild(container.lastElementChild);
+            } else {
+                alert("No box to delete");
+            }
+        }
+    </script>
+
+</body>
+</html>
